@@ -6,6 +6,12 @@ import { LoveLetter } from "@/components/LoveLetter";
 import { MemoryGallery } from "@/components/MemoryGallery";
 import { LoveReasons } from "@/components/LoveReasons";
 import { BloomingLily } from "@/components/BloomingLily";
+import { IntroCurtain } from "@/components/IntroCurtain";
+import { GrowingLily } from "@/components/GrowingLily";
+import { CoupleAvatars } from "@/components/CoupleAvatars";
+import { CartaPerdon } from "@/components/CartaPerdon";
+import { FrasesEmotivas } from "@/components/FrasesEmotivas";
+import { MemoryVideos } from "@/components/MemoryVideos";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +43,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="relative min-h-screen">
+      <IntroCurtain />
       <FallingPetals count={18} />
 
       {/* ---------- Portada ---------- */}
@@ -83,10 +90,25 @@ function Index() {
             <MemoryGallery />
           </div>
           <div className="md:col-span-2">
+            <MemoryVideos />
+          </div>
+          <div className="md:col-span-2">
+            <GrowingLily />
+          </div>
+          <div className="md:col-span-2">
             <BloomingLily />
           </div>
           <div className="md:col-span-2">
+            <CoupleAvatars />
+          </div>
+          <div className="md:col-span-2">
             <LoveReasons />
+          </div>
+          <div className="md:col-span-2">
+            <CartaPerdon />
+          </div>
+          <div className="md:col-span-2">
+            <FrasesEmotivas />
           </div>
         </div>
       </section>

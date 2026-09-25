@@ -10,9 +10,9 @@ export function BloomingLily() {
   const [stage, setStage] = useState(0);
   const messages = [
     "Hay flores que tardan en abrirse, pero siempre guardan algo hermoso.",
-    "Así llegaste a mi vida: llenándola poco a poco de color.",
+    "Bellota, así llegaste a mi vida: llenándola poco a poco de color.",
     "Tu amor hace florecer las mejores partes de mí.",
-    "Angy, mi deseo es verte florecer y acompañarte en cada nueva primavera.",
+    "Mi bombón de chocolate, mi deseo es verte florecer y acompañarte en cada nueva primavera.",
   ];
   const bloomed = stage > 0;
 

@@ -3,6 +3,7 @@ import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const LETTER_LINES = [
+  "Mi bellota, mi bombón de chocolate, mi negra:",
   "Angy,",
   "Hoy el mundo celebra el día en que llegaste a él,",
   "y yo celebro cada día en que llegaste a mi vida.",
@@ -15,7 +16,7 @@ const LETTER_LINES = [
   "Quiero seguir eligiéndote, cuidándote y construyendo contigo",
   "una historia llena de días bonitos y amor sincero.",
   "",
-  "Feliz cumpleaños, mi amor. 🤍",
+  "Feliz cumpleaños, mi bellota. 🤍",
   "— Camilo",
 ];
 
