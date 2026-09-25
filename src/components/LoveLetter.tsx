@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const LETTER_LINES = [
   "Angy,",
@@ -10,7 +11,12 @@ const LETTER_LINES = [
   "Que este nuevo año te regale todo lo que sueñas,",
   "y que siempre tenga un lugar a tu lado para verte florecer.",
   "",
+  "Gracias por cada sonrisa, cada abrazo y cada recuerdo.",
+  "Quiero seguir eligiéndote, cuidándote y construyendo contigo",
+  "una historia llena de días bonitos y amor sincero.",
+  "",
   "Feliz cumpleaños, mi amor. 🤍",
+  "— Camilo",
 ];
 
 export function LoveLetter() {
@@ -30,10 +36,12 @@ export function LoveLetter() {
       </p>
 
       {!open ? (
-        <button
+        <Button
+          type="button"
+          variant="ghost"
           onClick={() => setOpen(true)}
           aria-label="Abrir la carta de amor"
-          className="animate-glow-pulse group relative mx-auto mt-10 block w-full max-w-xs cursor-pointer rounded-2xl"
+          className="animate-glow-pulse group relative mx-auto mt-10 block h-auto w-full max-w-xs rounded-2xl p-0 hover:bg-transparent"
         >
           {/* Sobre */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary shadow-soft">
@@ -52,7 +60,7 @@ export function LoveLetter() {
           <span className="mt-4 inline-block rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-soft">
             Abrir mi carta 💌
           </span>
-        </button>
+        </Button>
       ) : (
         <div className="animate-bloom-open mt-8 rounded-2xl border border-border bg-lily-cream/60 p-6 sm:p-8">
           <div className="space-y-1.5 text-center">

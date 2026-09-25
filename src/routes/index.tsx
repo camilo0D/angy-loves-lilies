@@ -82,8 +82,12 @@ function Index() {
           <div className="md:col-span-2">
             <MemoryGallery />
           </div>
-          <BloomingLily />
-          <LoveReasons />
+          <div className="md:col-span-2">
+            <BloomingLily />
+          </div>
+          <div className="md:col-span-2">
+            <LoveReasons />
+          </div>
         </div>
       </section>
 
@@ -95,7 +99,7 @@ function Index() {
             Que este año te regale tanto como tú me regalas a mí cada día.
           </p>
           <p className="mt-3 text-sm tracking-widest text-muted-foreground uppercase">
-            Con amor, siempre tuyo
+            Con todo mi amor, Camilo
           </p>
         </div>
       </footer>

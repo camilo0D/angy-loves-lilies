@@ -42,6 +42,9 @@
   --color-lily-lavender: var(--lily-lavender);
   --color-lily-cream: var(--lily-cream);
   --color-lily-plum: var(--lily-plum);
+  --color-lily-leaf: var(--lily-leaf);
+  --color-lily-leaf-soft: var(--lily-leaf-soft);
+  --color-lily-gold: var(--lily-gold);
   --font-display: "DM Serif Display", Georgia, serif;
   --font-sans: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
 }
@@ -72,6 +75,9 @@
   --lily-lavender: oklch(0.63 0.13 305);
   --lily-cream: oklch(0.975 0.02 95);
   --lily-plum: oklch(0.38 0.08 342);
+  --lily-leaf: oklch(0.55 0.12 150);
+  --lily-leaf-soft: oklch(0.72 0.1 150);
+  --lily-gold: oklch(0.82 0.14 90);
   --shadow-soft: 0 18px 45px -18px oklch(0.71 0.15 356 / 0.35);
   --shadow-card: 0 10px 35px -14px oklch(0.38 0.08 342 / 0.18);
 }
@@ -194,6 +200,11 @@
   }
 }
 
+@keyframes lily-sway {
+  0%, 100% { transform: rotate(-1.5deg) scale(1); }
+  50% { transform: rotate(1.5deg) scale(1.02); }
+}
+
 .petal {
   position: absolute;
   top: 0;
@@ -237,6 +248,25 @@
 
 .animate-glow-pulse {
   animation: glow-pulse 2.2s ease-in-out infinite;
+}
+
+.animate-lily-sway {
+  animation: lily-sway 3.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal,
+  .animate-float-gentle,
+  .animate-fade-up,
+  .animate-bloom-open,
+  .animate-sparkle-pop,
+  .animate-heartbeat,
+  .animate-glow-pulse,
+  .animate-lily-sway {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
 }
 
 .delay-1 {
