@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const REASONS = [
   "Tu sonrisa ilumina hasta mis días grises.",
@@ -10,6 +11,10 @@ const REASONS = [
   "Tienes el corazón más generoso que conozco.",
   "Contigo, cualquier plan es el plan perfecto.",
   "Simplemente… eres tú. Y eso lo es todo.",
+  "Tu forma de cuidar a quienes amas habla de la belleza de tu corazón.",
+  "A tu lado aprendí que el amor también se siente como paz.",
+  "Admiro tu fuerza, tu esencia y la mujer maravillosa que eres.",
+  "Porque contigo quiero celebrar muchos cumpleaños y construir miles de recuerdos.",
 ];
 
 export function LoveReasons() {
@@ -45,12 +50,13 @@ export function LoveReasons() {
         )}
 
         {!done ? (
-          <button
+          <Button
+            type="button"
             onClick={() => setShown((s) => s + 1)}
-            className="cursor-pointer rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform duration-200 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="h-auto rounded-full px-7 py-3 shadow-soft hover:scale-105"
           >
             Otra razón 💗 ({shown}/{REASONS.length})
-          </button>
+          </Button>
         ) : (
           <p className="animate-fade-up font-display text-lg italic text-primary">
             …y podría seguir toda la vida.
