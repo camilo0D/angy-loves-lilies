@@ -53,6 +53,7 @@ const MEMORIES = [
 
 export function MemoryGallery() {
   const [selected, setSelected] = useState<number | null>(null);
+  const selectedMemory = selected === null ? undefined : MEMORIES[selected];
 
   const showPrev = () =>
     setSelected((current) => (current === null ? null : (current - 1 + MEMORIES.length) % MEMORIES.length));
@@ -94,11 +95,11 @@ export function MemoryGallery() {
         })}
       </div>
 
-      {selected !== null && (
+      {selected !== null && selectedMemory && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-lily-plum/80 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Recuerdo especial">
           <div className="animate-bloom-open relative grid max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-3xl bg-card shadow-soft sm:grid-cols-[1.05fr_0.95fr]">
             <div className="relative">
-              <img src={MEMORIES[selected].src} alt={MEMORIES[selected].alt} className="h-72 w-full object-cover sm:h-full sm:min-h-[520px]" />
+              <img src={selectedMemory.src} alt={selectedMemory.alt} className="h-72 w-full object-cover sm:h-full sm:min-h-[520px]" />
               <Button type="button" variant="secondary" size="icon" onClick={showPrev} aria-label="Recuerdo anterior" className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full shadow-card">
                 <ChevronLeft />
               </Button>
@@ -109,7 +110,7 @@ export function MemoryGallery() {
             <div className="flex flex-col justify-center p-7 text-center sm:p-10">
               <Heart className="mx-auto h-7 w-7 fill-primary text-primary" />
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Para Angy · {selected + 1}/{MEMORIES.length}</p>
-              <p key={selected} className="animate-fade-up mt-4 font-display text-2xl leading-relaxed text-lily-plum sm:text-3xl">"{MEMORIES[selected].hidden}"</p>
+              <p key={selected} className="animate-fade-up mt-4 font-display text-2xl leading-relaxed text-lily-plum sm:text-3xl">"{selectedMemory.hidden}"</p>
               <p className="mt-6 text-sm italic text-muted-foreground">Con amor, Camilo</p>
             </div>
             <Button type="button" variant="secondary" size="icon" onClick={() => setSelected(null)} aria-label="Cerrar recuerdo" className="absolute right-3 top-3 rounded-full shadow-card">
